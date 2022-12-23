@@ -26,3 +26,11 @@ class ConnectionStatusTests(TestCase):
         data = response.json()
         print(data)
         self.assertEquals(response.status_code, 200)
+
+
+class ViewsTests(TestCase):
+
+    def test_index(self):
+        response = self.client.get('/')
+        print(dir(response))
+        self.assertEquals(response.status_code, 200)
